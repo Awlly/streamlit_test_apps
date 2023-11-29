@@ -40,7 +40,9 @@ st.pyplot(plt)
 
 st.scatter_chart(tips, x = 'total_bill', y = 'tip')
 
+
 st.line_chart(tips[['total_bill', 'tip', 'size']])
+
 
 st.scatter_chart(tips, x = 'day_of_the_week', y = 'total_bill')
 
@@ -51,38 +53,6 @@ plt.xlabel('Day of the Week')
 plt.ylabel('Total Bill')
 
 st.pyplot(plt)
-
-
-# sns.lineplot(data = tips, x = 'time_order', y = 'tip')
-# plt.title('Tips Change Over Time')
-# plt.xlabel('date')
-# plt.ylabel('tip')
-# st.pyplot(plt)
-
-# sns.histplot(data = tips['total_bill'])
-# plt.title('Total Bill Hist')
-# plt.xlabel('Bill Total')
-# plt.ylabel('Bill count')
-# st.pyplot(plt)
-
-# sns.relplot(data = tips, x = 'total_bill', y = 'tip', kind = 'scatter')
-# st.pyplot(plt)
-
-
-# sns.relplot(data = tips[['total_bill', 'tip', 'size']], kind = 'line')
-# st.pyplot(plt)
-
-# sns.set(style = 'darkgrid')
-# sns.scatterplot(data = tips, x = 'day_of_the_week', y = 'total_bill')
-# st.pyplot(plt)
-
-
-# sns.scatterplot(data = tips, x = 'day_of_the_week', y = 'tip', hue = 'sex', palette = 'viridis')
-# st.pyplot(plt)
-
-
-# sns.boxplot(data = tips, x = 'day_of_the_week', y = 'total_bill', hue = 'meal_time', palette = 'Set1')
-# st.pyplot(plt)
 
 
 fig, axes = plt.subplots(nrows = 2, ncols = 1, figsize = (14,6), sharey = True)
@@ -96,6 +66,7 @@ axes[1].set_title('Tips During Dinner')
 plt.tight_layout()
 
 st.pyplot(plt)
+
 
 plt.figure(figsize=(10, 5))
 plt.subplot(1, 2, 1)
@@ -112,12 +83,6 @@ plt.ylabel('Tip')
 
 st.pyplot(plt)
 
-
-# sns.scatterplot(data = tips[tips['sex']=='Female'], x = 'sex', y='tip', hue = 'smoker', s = 60, alpha = 0.5)
-
-# sns.scatterplot(data = tips[tips['sex']=='Male'], x = 'sex', y='tip', hue = 'smoker', s = 60, alpha = 0.5)
-# plt.show()
-# st.pyplot(plt)
 
 sns.heatmap(tips[['total_bill', 'tip', 'size']].corr(), annot = True, cmap = 'coolwarm', fmt = ".2f", linewidths = 0.5)
 
